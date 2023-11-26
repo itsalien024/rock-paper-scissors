@@ -1,14 +1,15 @@
-function computersMove(num) {
-  num = 3;
+function computersMove() {
+  const num = 3;
   let choice;
-  let result;
-  result = Math.floor(Math.random() * num);
+  choice = computersMove();
+  let rng;
+  rng = Math.floor(Math.random() * num);
   
-  if (result == 0) {
+  if (rng == 0) {
     choice = 'rock';
-  } else if (result == 1) {
+  } else if (rng == 1) {
     choice = 'paper';
-  } else if (result == 2) {
+  } else if (rng == 2) {
     choice = 'scissors'
   }
   return choice;
@@ -16,6 +17,7 @@ function computersMove(num) {
 
 function playersMove(move) {
   let result;
+  result = playersMove();
   move = prompt('Rock, Paper or Scissors? ->');
   if (move.toLowerCase() == "rock") {
     result = 'rock';
@@ -29,5 +31,53 @@ function playersMove(move) {
   return result;
 }
 
+let computerScore = 0;
+let playerScore = 0; 
+
+function game(choice, result) {
+  switch (true) {
+    case (computersMove() == 'rock' && playersMove() == 'rock'):
+      console.log('Its a tie!');
+      break;
+
+    case (computersMove() == 'rock' && playersMove() == 'paper'):
+      playerScore ++;
+      console.log('Player Wins!');
+      break;
+
+    case (computersMove() == 'rock' && playersMove() == 'scissors'):
+      computerScore ++;
+      console.log('Computer Wins!');
+      break;
+    
+    case (computersMove() == 'paper' && playersMove() == 'rock'):
+      computerScore ++;
+      console.log('Computer Wins!');
+      break;
+
+    case (computersMove() == 'paper' && playersMove() == 'paper'):
+      console.log('Its a tie!');
+      break;
+        
+    case (computersMove() == 'paper' && playersMove() == 'scissors'):
+      playerScore ++;
+      console.log('Player Wins');
+      break;
+
+    case (computersMove() == 'scissors' && playersMove() == 'rock'):
+      playerScore ++;
+      console.log('Player Wins!');
+      break;
+
+    case (computersMove() == 'scissors' && playersMove() == 'paper'):
+      computerScore ++;
+      console.log('Computer Wins!');
+      break;
+        
+    case (computersMove() == 'scissors' && playersMove() == 'scissors'):
+      console.log('Its a tie!');
+      break;
+  }
+}
 
 
