@@ -1,23 +1,21 @@
 function computersMove() {
   const num = 3;
-  let choice;
-  choice = computersMove();
+  let compMove;
   let rng;
   rng = Math.floor(Math.random() * num);
   
   if (rng == 0) {
-    choice = 'rock';
+    compMove = 'rock';
   } else if (rng == 1) {
-    choice = 'paper';
+    compMove = 'paper';
   } else if (rng == 2) {
-    choice = 'scissors'
+    compMove = 'scissors'
   }
-  return choice;
+  return compMove;
 }
 
 function playersMove(move) {
   let result;
-  result = playersMove();
   move = prompt('Rock, Paper or Scissors? ->');
   if (move.toLowerCase() == "rock") {
     result = 'rock';
@@ -28,56 +26,78 @@ function playersMove(move) {
   } else {
     console.log('Please choose a valid move.')
   }
-  return result;
+  return result; 
 }
 
 let computerScore = 0;
 let playerScore = 0; 
+let cMove = computersMove();
+let pMove = playersMove();
 
-function game(choice, result) {
+function game(cMove, pMove) {
   switch (true) {
-    case (computersMove() == 'rock' && playersMove() == 'rock'):
+    case (cMove == 'rock' && pMove == 'rock'):
       console.log('Its a tie!');
+      console.log('You chose Rock, The computer chose Rock');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
 
-    case (computersMove() == 'rock' && playersMove() == 'paper'):
+    case (cMove == 'rock' && pMove == 'paper'):
       playerScore ++;
       console.log('Player Wins!');
+      console.log('You chose Paper, The computer chose Rock');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
 
-    case (computersMove() == 'rock' && playersMove() == 'scissors'):
+    case (cMove == 'rock' && pMove == 'scissors'):
       computerScore ++;
       console.log('Computer Wins!');
+      console.log('You chose Scissors, The computer chose Rock');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
     
-    case (computersMove() == 'paper' && playersMove() == 'rock'):
+    case (cMove == 'paper' && pMove == 'rock'):
       computerScore ++;
       console.log('Computer Wins!');
+      console.log('You chose Rock, The computer chose Paper');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
 
-    case (computersMove() == 'paper' && playersMove() == 'paper'):
+    case (cMove == 'paper' && pMove == 'paper'):
       console.log('Its a tie!');
+      console.log('You chose Paper, The computer chose Paper');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
         
-    case (computersMove() == 'paper' && playersMove() == 'scissors'):
+    case (cMove == 'paper' && pMove == 'scissors'):
       playerScore ++;
       console.log('Player Wins');
+      console.log('You chose Scissors, The computer chose Paper');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
 
-    case (computersMove() == 'scissors' && playersMove() == 'rock'):
+    case (cMove == 'scissors' && pMove == 'rock'):
       playerScore ++;
       console.log('Player Wins!');
+      console.log('You chose Rock, The computer chose Scissors');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
 
-    case (computersMove() == 'scissors' && playersMove() == 'paper'):
+    case (cMove == 'scissors' && pMove == 'paper'):
       computerScore ++;
       console.log('Computer Wins!');
+      console.log('You chose Paper, The computer chose Scissors');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
         
-    case (computersMove() == 'scissors' && playersMove() == 'scissors'):
+    case (cMove == 'scissors' && pMove == 'scissors'):
       console.log('Its a tie!');
+      console.log('You chose Scissors, The computer chose Scissors');
+      console.log('Player Score: ' + playerScore, 'Computer Score: ' + computerScore,);
       break;
   }
 }
+
+console.log(game(cMove, pMove));
 
 
