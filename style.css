@@ -36,16 +36,17 @@
   display: flex;
 }
 
-#computerS {
+#computerScore {
   flex: 1;
   border: orange 1px solid;
   width: 200px;
 }
 
-#playerS {
+#playerScore {
   flex: 1;
   border: green 1px solid;
   width: 200px;
+  flex-direction: column;
 }
 
 #gameMessage {
@@ -53,5 +54,24 @@
   width: 400px;
   height: 50px;
   align-self: center;
+  text-align: center;
 }
 
+#playerScoreNumber {
+  
+}
+
+#playerName, #playerScoreNumber {
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#computerName, #computerScoreNumber {
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#playerName, #computerName {
+}
