@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/script.js" defer></script>
+    <script type="text/javascript" src="scripts/functionality.js" defer></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    
+    <div id="container">
+      <button id="rock"><img class="image" src="images/rock.png" alt="rock image"></button>
+      <button id="paper"><img class="image" src="images/paper.png" alt=""></button>
+      <button id="scissors"><img class="image" src="images/scissors.png" alt=""></button>
+      <button id="play">Play</button>
+    </div>
+    <div id="scoreWrapper">
+      <div id="scorecard">
+        <div id="playerS">
+          Player Score:
+        </div>
+        <div id="computerS">
+          Computer Score:
+        </div>
+      </div>
+      <div id="gameMessage">
+
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,57 @@
+#rock {
+  height: 100px;
+  width: 100px;
+}
+
+#paper {
+  height: 100px;
+  width: 100px;
+}
+
+#scissors {
+  height: 100px;
+  width: 100px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+} 
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+#scoreWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#scorecard {
+  align-self: center;
+  border: red 1px solid;
+  width: 400px;
+  height: 100px;
+  display: flex;
+}
+
+#computerS {
+  flex: 1;
+  border: orange 1px solid;
+  width: 200px;
+}
+
+#playerS {
+  flex: 1;
+  border: green 1px solid;
+  width: 200px;
+}
+
+#gameMessage {
+  border: blue 1px solid;
+  width: 400px;
+  height: 50px;
+  align-self: center;
+}
+
