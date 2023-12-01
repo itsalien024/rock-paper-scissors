@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript" src="scripts/script.js" defer></script>
     <script type="text/javascript" src="scripts/functionality.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-    <div id="container">
-      <button id="rock"><img class="image" src="images/rock.png" alt="rock image"></button>
-      <button id="paper"><img class="image" src="images/paper.png" alt=""></button>
-      <button id="scissors"><img class="image" src="images/scissors.png" alt=""></button>
-      <button id="play">Play</button>
-    </div>
-    <div id="scoreWrapper">
-      <div id="scorecard">
-        <div id="playerScore">
-          <div id="playerName">
-            Player Score
-          </div>
-          <div id="playerScoreNumber">test</div>
-        </div>
-        <div id="computerScore">
-          <div id="computerName">
-            Computer Score
-          </div>
-          <div id="computerScoreNumber">test</div>  
-        </div>
+    <div id="gameBody">
+      <div id="container">
+        <button id="rock"><img class="image" src="images/rock.png" alt="rock image"></button>
+        <button id="paper"><img class="image" src="images/paper.png" alt=""></button>
+        <button id="scissors"><img class="image" src="images/scissors.png" alt=""></button>
       </div>
-      <div id="gameMessage">
-        <p id="winnerMessage"></p>
+      <div id="scoreWrapper">
+        <div id="scorecard">
+          <div id="playerScore">
+            <div id="playerName">
+              <span id="names">Player Name</span>
+            </div>
+            <div id="playerScoreNumber">
+              <span id="pNumbers">
+                0
+              </span>
+            </div>
+          </div>
+          <div id="computerScore">
+            <div id="computerName">
+              <span id="names">Computer Name</span>
+            </div>
+            <div id="computerScoreNumber">
+              <span id="cNumbers">
+                0
+              </span>
+            </div>  
+          </div>
+        </div>
+        <div id="gameMessage">
+          <span id="winnerMessage"></span>
+        </div>
+        <div id="gameRules">
+          <span id="gameRulesTitle">
+            GAME RULES
+          </span>
+          <ul id="gameRulesUL">
+            <li id="separators">----------</li>
+            <li id="ulText">Press either button to select your move</li>
+            <li id="separators">----------</li>
+            <li id="ulText">Once your move is selected, the computer selects its move automatically</li>
+            <li id="separators">----------</li>
+            <li id="ulText">Depending on the winner, the scores will increase</li>
+            <li id="separators">----------</li>
+            <li id="ulText">Whoever reaches 5 points first wins!</li>
+            <li id="separators">----------</li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>

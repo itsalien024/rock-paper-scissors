@@ -2,8 +2,8 @@ let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 let message = document.querySelector('#winnerMessage');
-let playerScore = document.querySelector('#playerScoreNumber');
-let computerScore = document.querySelector('#computerScoreNumber');
+let playerScore = document.querySelector('#pNumbers');
+let computerScore = document.querySelector('#cNumbers');
 let winner;
 let playersMove;
 
@@ -25,14 +25,26 @@ let computersMove = function() {
 }
 
 let reset = function () {
-  playerScore = 0;
-  computerScore = 0;
+  if (playerScore == 5 || computerScore == 5) {
+    pNumbers.innerHTML = ('0');
+    cNumbers.innerHTML = ('0');
+    playerScore = 0;
+    computerScore = 0;
+  };
+
+  if (playerScore == 6) {
+    message.innerHTML = ('Player Wins The Game!');
+  } else if (computerScore == 6) {
+    message.innerHTML = ('Computer Wins The Game!');
+  }
 }
+
 
 
 rock.onclick = function () {
   let cMove = computersMove();
   playersMove = 'rock';
+  reset();
 
   switch(true) {
     case playersMove == 'rock' && cMove == 'rock':
@@ -42,36 +54,28 @@ rock.onclick = function () {
     case playersMove == 'rock' && cMove == 'paper':
       computerScore++
       message.innerHTML = ('Computer Wins!')
-      computerScoreNumber.innerHTML = (computerScore);
+      cNumbers.innerHTML = (computerScore);
       break;
 
     case playersMove == 'rock' && cMove == 'scissors':
       playerScore++
       message.innerHTML = ('Player Wins!')
-      playerScoreNumber.innerHTML = (playerScore);
+      pNumbers.innerHTML = (playerScore);
       break;
-  }
-
-  if (playerScore == 10) {
-    message.innerHTML = ('Player Wins The Game!')
-    reset();
-  }else if (computerScore == 10) {
-    message.innerHTML = ('Comouter Wins The Game!')
-    reset();
-  }
-
-  return;
+  };
+  reset();
 }
 
 paper.onclick = function () {
   let cMove = computersMove();
   playersMove = 'paper';
+  reset();
 
   switch(true) {
     case playersMove == 'paper' && cMove == 'rock':
       playerScore++
       message.innerHTML = ('Player Wins!')
-      playerScoreNumber.innerHTML = (playerScore);
+      pNumbers.innerHTML = (playerScore);
       break;
 
     case playersMove == 'paper' && cMove == 'paper':
@@ -81,51 +85,35 @@ paper.onclick = function () {
     case playersMove == 'paper' && cMove == 'scissors':
       computerScore++
       message.innerHTML = ('Computer Wins!')
-      computerScoreNumber.innerHTML = (computerScore);
+      cNumbers.innerHTML = (computerScore);
       break;
-  }
-
-    if (playerScore == 10) {
-      message.innerHTML = ('Player Wins The Game!')
-      reset();
-    }else if (computerScore == 10) {
-      message.innerHTML = ('Comouter Wins The Game!')
-      reset();
-    }
-
-  return ;
+  };
+  reset();
 }
 
 scissors.onclick = function () {
   let cMove = computersMove();
   playersMove = 'scissors';
+  reset();
 
   switch(true) {
     case playersMove == 'scissors' && cMove == 'rock':
       computerScore++
       message.innerHTML = ('Computer Wins!')
-      computerScoreNumber.innerHTML = (computerScore);
+      cNumbers.innerHTML = (computerScore);
       break;
 
     case playersMove == 'scissors' && cMove == 'paper':
       playerScore++
       message.innerHTML = ('Player Wins!')
-      playerScoreNumber.innerHTML = (playerScore);
+      pNumbers.innerHTML = (playerScore);
       break;
 
     case playersMove == 'scissors' && cMove == 'scissors':
       message.innerHTML = ('Its A Tie!')
       break;
-  }
-
-  if (playerScore == 10) {
-    message.innerHTML = ('Player Wins The Game!')
-    reset();
-  }else if (computerScore == 10) {
-    message.innerHTML = ('Comouter Wins The Game!')
-    reset();
-  }
-
-  return ;
+      
+  };
+  reset();
 }
 

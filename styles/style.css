@@ -1,0 +1,144 @@
+@font-face {
+  font-family: PixelF;
+  src:url("/fonts/pixel-lcd-7.ttf");
+}
+
+body {
+  font-family: PixelF;
+  background-color: black;
+}
+
+#rock {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+#paper {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+#scissors {
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+} 
+
+#container {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+#scoreWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#scorecard {
+  align-self: center;
+  width: 400px;
+  height: 100px;
+  display: flex;
+}
+
+#computerScore {
+  flex: 1;
+  width: 200px;
+}
+
+#playerScore {
+  font-family: PixelF;
+  flex: 1;
+  width: 200px;
+  flex-direction: column;
+}
+
+#gameMessage {
+  width: 400px;
+  height: 50px;
+  align-self: center;
+  text-align: center;
+}
+
+#gameRules {
+  width: 400px;
+  height: 140px;
+  align-self: center;
+  text-align: center;
+}
+
+#gameRulesTitle {
+  height: 20px;
+  font-size: 25px;
+  padding: 5px;
+  color: #FF0015;
+}
+
+#gameRulesUL {
+  padding: 0px;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 10px;
+}
+
+#ulText {
+  color: #A8FEFC;
+}
+
+#separators {
+  color: white;
+}
+
+#playerName, #playerScoreNumber {
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#computerName, #computerScoreNumber {
+  height: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+
+#playerName, #computerName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#names {
+  margin-top: 25px;
+  color: #FF0015;
+}
+
+#playerScoreNumber, #computerScoreNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pNumbers, #cNumbers {
+  margin-top: 15px;
+  color: #32A956;
+  font-size: 25px;
+}
+
+#winnerMessage {
+  color: #EF35AD;
+}
